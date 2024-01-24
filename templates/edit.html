@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Student</h2>
+        <form method="POST" action="{{ url_for('edit', id=student[0]) }}">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ student[1] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="{{ student[2] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" value="{{ student[3] }}" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn">
+                <a href="{{ url_for('admin_dashboard') }}" class="btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
